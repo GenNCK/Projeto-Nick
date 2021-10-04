@@ -16,16 +16,16 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
+	@NotNull(message = "Não pode ser nulo e deve conter de 5 até 20 caracteres")
 	@Size(min = 5, max = 20)
 	private String titulo;
 	
-	@NotNull
-	@Size(min = 1, max = 20)
+	@NotNull(message = "Não pode ser nulo e deve conter no maximo 10 caracteres")
+	@Size(min = 1, max = 20, message = "Livre/Adulto")
 	private String classificacao;
 	
-	@NotNull
-	@Size(min = 5, max = 30)
+	@NotNull(message = "Não pode ser nulo e deve conter de 5 até 30 caracteres")
+	@Size(min = 5, max = 30, message = "Leve/Moderado/Grave")
 	private String impacto;
 
 	public long getId() {

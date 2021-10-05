@@ -76,12 +76,12 @@ public class Postagem {
 		this.texto = texto;
 	}
 
-	public Date getHorario() {
+	public Date getData() {
 		return data;
 	}
 
-	public void setHorario(Date horario) {
-		this.data= data;
+	public void setData(Date data) {
+		this.data = data;
 	}
 
 	public Usuario getUsuario() {

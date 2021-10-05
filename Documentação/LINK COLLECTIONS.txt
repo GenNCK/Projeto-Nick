@@ -1,0 +1,20 @@
+Link para visualizar a collection no postman:
+https://www.getpostman.com/collections/d4d2a1c6a56cf12ab858
+
+get:
+GET ALL http://localhost:8080/tema
+GET ID  http://localhost:8080/tema/1
+GET TITULO http://localhost:8080/tema/titulo/p
+post:
+POST TEMA http://localhost:8080/tema
+POST POSTAGEM http://localhost:8080/postagem
+POST USUARIO http://localhost:8080/usuario
+put:
+PUT TEMA http://localhost:8080/tema
+PUT POSTAGEM http://localhost:8080/postagem
+PUT USUARIO http://localhost:8080/usuario
+delete:
+
+DELETE TEMA http://localhost:8080/tema/1
+DELETE POSTAGEM http://localhost:8080/postagem/1
+DELETE USUARIO http://localhost:8080/usuario/1

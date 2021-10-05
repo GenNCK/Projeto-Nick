@@ -21,7 +21,7 @@ public class Tema {
 	private String titulo;
 	
 	@NotNull(message = "Não pode ser nulo e deve conter no maximo 10 caracteres")
-	@Size(min = 1, max = 20, message = "Livre/Adulto")
+	@Size(min = 1, max = 10, message = "Livre/Adulto")
 	private String classificacao;
 	
 	@NotNull(message = "Não pode ser nulo e deve conter de 5 até 30 caracteres")

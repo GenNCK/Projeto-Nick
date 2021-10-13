@@ -33,7 +33,11 @@ public class Usuario {
 	@NotNull
 	@Size(min = 5,  max = 100, message = "Informar o nome como voce gostaria de ser referenciado.")
 	private String nome;
-
+	
+	@NotNull
+	@Size(min = 5,  max = 20, message = "Informar o nome do usuario.")
+	private String usuario;
+	
 	
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
@@ -70,6 +74,16 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	
+	public String getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
+
 	public List<Postagem> getPostagem() {
 		return postagem;
 	}

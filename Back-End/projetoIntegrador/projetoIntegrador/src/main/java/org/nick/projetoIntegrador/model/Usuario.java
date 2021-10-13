@@ -27,7 +27,7 @@ public class Usuario {
 	private String email;
 	
 	@NotNull
-	@Size(min = 8,  max = 8, message = "A senha para seu acesso deve ter 8 caracteres.")
+	@Size(min = 4, message = "A senha para seu acesso deve ter 8 caracteres.")
 	private String senha;
 	
 	@NotNull

@@ -1,5 +1,5 @@
 Link para visualizar a collection no postman:
-https://www.getpostman.com/collections/d4d2a1c6a56cf12ab858
+https://www.getpostman.com/collections/7b67df2f70c96a8b0bb8
 
 get:
 GET ALL http://localhost:8080/tema

@@ -21,28 +21,27 @@ public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
+
 	@NotNull
-	@Size(min = 5,  max = 50, message = "Informar um e-mail valido para acessar o site.")
+	@Size(min = 5, max = 500, message = "Informar um e-mail valido para acessar o site.")
 	private String email;
-	
+
 	@NotNull
-	@Size(min = 4, message = "A senha para seu acesso deve ter 8 caracteres.")
+	@Size(min = 1, max = 100,message = "A senha para seu acesso deve ter 8 caracteres.")
 	private String senha;
-	
+
 	@NotNull
-	@Size(min = 5,  max = 100, message = "Informar o nome como voce gostaria de ser referenciado.")
+	@Size(min = 5, max = 100, message = "Informar o nome como voce gostaria de ser referenciado.")
 	private String nome;
-	
+
 	@NotNull
-	@Size(min = 5,  max = 20, message = "Informar o nome do usuario.")
+	@Size(min = 5, max = 200, message = "Informar o nome do usuario.")
 	private String usuario;
-	
-	
-	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL)
+
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
-	
+
 	public long getId() {
 		return id;
 	}
@@ -74,8 +73,7 @@ public class Usuario {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+
 	public String getUsuario() {
 		return usuario;
 	}
@@ -91,7 +89,5 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-	
-	
-	
+
 }

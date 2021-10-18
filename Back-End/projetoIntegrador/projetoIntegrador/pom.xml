@@ -13,11 +13,20 @@
 	<artifactId>blogPessoal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>blogPessoal</name>
-	<description>Aqui estão listados todos os projetos desenvolvidos por dev_capela ao longo de sua jornada como Engenheiro de Software. Projetos acadêmicos, profissionais, pessoais e muito mais.</description>
+	<description></description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 		<dependency>
 			<groupId>commons-codec</groupId>
 			<artifactId>commons-codec</artifactId>

@@ -25,10 +25,6 @@ public class Usuario {
 	private long id;
 
 	@NotNull
-	@Size(min = 5, max = 500, message = "Informar um e-mail valido para acessar o site.")
-	private String email;
-
-	@NotNull
 	@Size(min = 1, max = 100, message = "A senha para seu acesso deve ter 8 caracteres.")
 	private String senha;
 
@@ -56,14 +52,6 @@ public class Usuario {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getSenha() {

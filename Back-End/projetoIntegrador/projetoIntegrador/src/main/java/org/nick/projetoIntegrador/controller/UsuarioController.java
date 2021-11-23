@@ -66,23 +66,10 @@ public class UsuarioController {
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
 	}
 
-
 	@PostMapping("/cadastrar")
-	public ResponseEntity<Usuario> postUsuario(@RequestBody Usuario usuario) {
-		
-		return usuarioService.CadastrarUsuario(usuario)
-			.map(resp -> ResponseEntity.status(HttpStatus.CREATED).body(resp))
-			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
-		
+	public ResponseEntity<Usuario> Post(@RequestBody Usuario usuario) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.CadastrarUsuario(usuario)); 
 	}
-	@PutMapping("/atualizar")
-	public ResponseEntity<Usuario> putUsuario(@RequestBody Usuario usuario){
-		
-		return usuarioService.atualizarUsuario(usuario)
-			.map(resp -> ResponseEntity.status(HttpStatus.OK).body(resp))
-			.orElse(ResponseEntity.status(HttpStatus.BAD_REQUEST).build());
-	}
-
 	
 }
 

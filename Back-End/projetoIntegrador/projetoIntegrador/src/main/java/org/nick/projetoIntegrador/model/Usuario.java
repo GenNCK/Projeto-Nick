@@ -14,8 +14,6 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import io.swagger.annotations.ApiModelProperty;
-
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
@@ -24,25 +22,26 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 
+	private String foto;
+	
+	private String tipo;
+	
+	@Size(min = 5, max = 500, message = "Informar um e-mail valido para acessar o site.")
+	private String email;
+
 	@NotNull
-	@Size(min = 1, max = 100, message = "A senha para seu acesso deve ter 8 caracteres.")
+	@Size(min = 1, max = 100,message = "A senha para seu acesso deve ter 8 caracteres.")
 	private String senha;
 
 	@NotNull
 	@Size(min = 5, max = 100, message = "Informar o nome como voce gostaria de ser referenciado.")
 	private String nome;
 
-	@ApiModelProperty(example = "email@email.com.br")
 	@NotNull
 	@Size(min = 5, max = 200, message = "Informar o nome do usuario.")
 	private String usuario;
-	
-	private String foto;
-	
-	private String tipo;
-	
 
-	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("usuario")
 	private List<Postagem> postagem;
 
@@ -52,6 +51,29 @@ public class Usuario {
 
 	public void setId(long id) {
 		this.id = id;
+	}
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getSenha() {
@@ -85,23 +107,5 @@ public class Usuario {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
-
-	public String getFoto() {
-		return foto;
-	}
-
-	public void setFoto(String foto) {
-		this.foto = foto;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-	
-	
 
 }
